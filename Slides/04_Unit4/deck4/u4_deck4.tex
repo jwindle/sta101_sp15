@@ -95,7 +95,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-%\input{../../definitions_custom.tex}
+\input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -105,13 +105,15 @@
 \subtitle{3. ANOVA}
 \author{Sta 101 - Spring 2015}
 \date{March 4, 2015}
+% ALT ALT
+\date{March 5, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 %%%%%%%%%%%
 % Main ideas %
 %%%%%%%%%%%
 
-\newcommand{\multtest}{To identify which means are different, use pairwise t-tests}
+\newcommand{\multtest}{To identify which means are different, use pairwise t-tests (note: pairwise, not paired)}
 
 \newcommand{\bonferroni}{If you want to test many hypotheses simultaneously, use the Bonferroni correction}
 
@@ -147,9 +149,15 @@
 
 \begin{itemize}
 
+% \item PA4 after class today, due Friday at 11:59pm
+
+% \item RA5 Monday after spring break
+
+% ALT ALT 
+
 \item PA4 after class today, due Friday at 11:59pm
 
-\item RA5 Monday after spring break
+\item RA5 Tuesday after spring break
 
 \end{itemize}
 
@@ -353,6 +361,59 @@ then the probability of making one or more type I errors is $ \leq \alpha$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
+  \frametitle{2. \bonferroni}
+
+The process:
+\begin{enumerate}
+\item Do ANOVA (F-test).
+\item Do multiple tests using the Bonferroni correction.
+\end{enumerate}
+
+\hfill \\
+
+\small When following this process, be consistent with the assumptions. \pause
+
+\clicker{Which of the following is not a necessary assumption of the F-test?}
+\begin{enumerate}
+\item Each group has the same variance.
+
+\item The data are nearly normal or there are a sufficient number of observations within each group for the CLT to apply.
+
+\item The observations are independent.
+
+\item \solnMult{There are an equal number of observations in each group.}
+\end{enumerate}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \bonferroni}
+
+Practical impact of the assumptions of the $F$-test:
+
+\begin{itemize}
+
+\item Every group has the same standard deviation:
+\[
+s = \underbrace{SSE / df_{\text{within}}}_{MSE}, \; \; df_{\text{within}} = n - j.
+\]
+
+\item This means that the estimate of the standard error for a \emph{pairwise} t-test is
+\[
+SE = \sqrt{\frac{s^2}{n_1} + \frac{s^2}{n_2}}
+\]
+and the $df$ to use when constructing a CI or doing a HT will be $df_{\text{within}}$.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
   \frametitle{}
 
 \vfill
@@ -365,178 +426,176 @@ then the probability of making one or more type I errors is $ \leq \alpha$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\subsection{\ftest}
-%\label{mi3}
-%
-%\begin{frame}
+% \subsection{\ftest}
+% \label{mi3}
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%A new research question:
-%
-%\disc{
-%Does "litter" in the image change some subjects' reaction times?
-%}
-%
-%{\small
-%\begin{align*}
-%01.\ &  \; \; H_0: \; \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
+
+% A new research question ({\color{red}and new material}):
+
+% \disc{
+% Does "litter" in the image change some subjects' reaction times?
+% }
+
+% {\small
+% \begin{align*}
+% 01.\ &  \; \; H_0: \; \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
 %     &  \; \; H_A: \; \mu_{\text{S06 \& Litter}} \neq \mu_{\text{S06 \& No Litter}} \\
-%02.\ &  \; \; H_0: \; \mu_{\text{S08 \& Litter}} = \mu_{\text{S08 \& No Litter}} \\
+% 02.\ &  \; \; H_0: \; \mu_{\text{S08 \& Litter}} = \mu_{\text{S08 \& No Litter}} \\
 %     &  \; \; H_A: \; \mu_{\text{S08 \& Litter}} \neq \mu_{\text{S08 \& No Litter}} \\
 %     & \ldots \\
-%12.\ &  \; \; H_0: \; \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
+% 12.\ &  \; \; H_0: \; \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
 %     &  \; \; H_A: \; \mu_{\text{S26 \& Litter}} \neq \mu_{\text{S26 \& No Litter}} 
-%\end{align*}
-%}
-%
-%Same problem as before... multiple hypotheses.
-%
-%\end{frame}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{frame}
+% \end{align*}
+% }
+
+% Same problem as before... multiple hypotheses.
+
+% \end{frame}
+
+
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%Null hypothesis: litter does not change the mean reaction time of anyone.
-%
-%\hfill \\
-%
-%
-%{\small
-%\begin{align*}
-%H_0: \; & \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
-%\textmd{and } \; & \mu_{\text{S08 \& Litter}} = \mu_{\text{S08 \& No Litter}} \\
-%\textmd{and } \; & \; \; \; \ldots \\
-%\textmd{and } \; & \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
-%\end{align*}
-%}
-%
-%\end{frame}
-%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{frame}
+
+% Null hypothesis: litter does not change the mean reaction time of anyone.
+
+% \hfill \\
+
+
+% {\small
+% \begin{align*}
+% H_0: \; & \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
+% \textmd{and } \; & \mu_{\text{S08 \& Litter}} = \mu_{\text{S08 \& No Litter}} \\
+% \textmd{and } \; & \; \; \; \ldots \\
+% \textmd{and } \; & \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
+% \end{align*}
+% }
+
+% \end{frame}
+
+
+
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%If litter does not change the mean reaction time of anyone, then, for instance,
-%\begin{equation}
-%\label{eqn:anova2}
-%\mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} = \mu_{\text{S06}}.
-%\end{equation}
-%
-%\pause
-%
-%\hfill \\
-%
-%Think about within group SS:
-%\[
-%SSE = \sum_{i=1}^n (y_i - \mu_{\text{group that $y_i$ is in}})^2
-%\]
-%
-%\pause
-%
-%If (\ref{eqn:anova2}) is true for every subject, then
-%\[
-%SSE_{\text{subject}} = SSE_{\text{subject \& litter}}
-%\]
-%
-%\end{frame}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{frame}
+
+% If litter does not change the mean reaction time of anyone, then, for instance,
+% \begin{equation}
+% \label{eqn:anova2}
+% \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} = \mu_{\text{S06}}.
+% \end{equation}
+
+% \pause
+
+% \hfill \\
+
+% Think about within group SS:
+% \[
+% SSE = \sum_{i=1}^n (y_i - \mu_{\text{group that $y_i$ is in}})^2
+% \]
+
+% \pause
+
+% If (\ref{eqn:anova2}) is true for every subject, then
+% \[
+% SSE_{\text{subject}} = SSE_{\text{subject \& litter}}
+% \]
+
+% \end{frame}
+
+
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%{\small
-%To see if there is a difference between some groups, look at percent increase in within group variation when excluding litter as an explanatory variable:
-%}
-%\only<1>{
-%\[
-%\frac{SSE_{\text{subject}} - SSE_{\text{subject \& litter}}}{SSE_{\text{subject \& litter}}}
-%\]
-%}
-%\only<2->{
-%\[
-%F = \frac{(SSE_{\text{subject}} - SSE_{\text{subject \& litter}}) / (j_{\text{subject \& litter}} - j_{\text{subject}})}
-%{SSE_{\text{subject \& litter}} / (n-j_{\text{subject \& litter}})}
-%\]
-%}
-%
-%\begin{itemize}
-%\item Small: no difference for any subject
-%\item Large: a difference for some subject
-%\end{itemize}
-%
-%\hfill \\
-%
-%\only<3>{
-%\small
-%$n$: number of obs.
-%
-%$j_{\text{subject}}$: number of groups by subject.
-%
-%$j_{\text{subject \& litter}}$: number of groups by subject and litter.
-%}
-%
-%\end{frame}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{frame}
+
+% {\small
+% To see if there is a difference between some groups, look at percent increase in within group variation when excluding litter as an explanatory variable:
+% }
+% \only<1>{
+% \[
+% \frac{SSE_{\text{subject}} - SSE_{\text{subject \& litter}}}{SSE_{\text{subject \& litter}}}
+% \]
+% }
+% \only<2->{
+% \[
+% F = \frac{(SSE_{\text{subject}} - SSE_{\text{subject \& litter}}) / (j_{\text{subject \& litter}} - j_{\text{subject}})}
+% {SSE_{\text{subject \& litter}} / (n-j_{\text{subject \& litter}})}
+% \]
+% }
+
+% \begin{itemize}
+% \item Small: no difference for any subject
+% \item Large: a difference for some subject
+% \end{itemize}
+
+% \hfill \\
+
+% \only<3>{
+% \small
+% $n$: number of obs.
+
+% $j_{\text{subject}}$: number of groups by subject.
+
+% $j_{\text{subject \& litter}}$: number of groups by subject and litter.
+% }
+
+% \end{frame}
+
+
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%\includegraphics[scale=0.7]{figures/rxntime-boxplot-subject-littered.png}
-%
-%\end{frame}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{frame}
+
+% \includegraphics[scale=0.7]{figures/rxntime-boxplot-subject-littered.png}
+
+% \end{frame}
+
+
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%$df_1 = j_{\text{subject \& litter}} - j_{\text{subject}}$
-%
-%$df_2 = n - j_{\text{subject \& litter}}$.
-%\[
-%F_{obs} = \frac{(SSE_{\text{subject}} - SSE_{\text{subject \& litter}}) / (j_{\text{subject \& litter}} - j_{\text{subject}})}
-%{SSE_{\text{subject \& litter}} / (n-j_{\text{subject \& litter}})}.
-%\]
-%\[
-%p_{obs} = P(W > F_{obs} \mid H_0) = P(W > F_{obs} \mid W \sim \text{F-dist}_{df_1,df_2}).
-%\]
-%
-%\clicker{$SSE_{\text{subject \& litter}} = 30935621$; $SSE_{\text{subject}} = 35129401$.  There are 1920 obs. Do you reject at the $\alpha = 10^{-5}$ level?}
-%
-%(A) \solnMult{Yes} (b) No
-%
-%
-%% Model 1: PictureTarget.RT ~ as.factor(Subject)
-%% Model 2: PictureTarget.RT ~ as.factor(Subject) * as.factor(Littered)
-%%   Res.Df      RSS Df Sum of Sq      F    Pr(>F)    
-%% 1   1908 35129401                                  
-%% 2   1896 30935621 12   4193781 21.419 < 2.2e-16 ***
-%
-%
-%\end{frame}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{frame}
+
+% $df_1 = j_{\text{subject \& litter}} - j_{\text{subject}}$
+
+% $df_2 = n - j_{\text{subject \& litter}}$.
+% \[
+% F_{obs} = \frac{(SSE_{\text{subject}} - SSE_{\text{subject \& litter}}) / (j_{\text{subject \& litter}} - j_{\text{subject}})}
+% {SSE_{\text{subject \& litter}} / (n-j_{\text{subject \& litter}})}.
+% \]
+% \[
+% p_{obs} = P(W > F_{obs} \mid H_0) = P(W > F_{obs} \mid W \sim \text{F-dist}_{df_1,df_2}).
+% \]
+
+% \clicker{$SSE_{\text{subject \& litter}} = 30935621$; $SSE_{\text{subject}} = 35129401$.  There are 1920 obs. Do you reject at the $\alpha = 10^{-5}$ level?}
+
+% (A) \solnMult{Yes} (b) No
+
+% % Model 1: PictureTarget.RT ~ as.factor(Subject)
+% % Model 2: PictureTarget.RT ~ as.factor(Subject) * as.factor(Littered)
+% %   Res.Df      RSS Df Sum of Sq      F    Pr(>F)    
+% % 1   1908 35129401                                  
+% % 2   1896 30935621 12   4193781 21.419 < 2.2e-16 ***
+
+% \end{frame}
+
+
+
+% \begin{frame}
 %  \frametitle{\ftest}
-%
-%\clicker{What is the best interpretation of the result?}
-%There is evidence that
-%\begin{enumerate}[(a)]
-%\item \solnMult{some of the subject's reaction times change when the image is littered.}
-%\item many subjects reaction times change when the image is littered, since the $F$-value is large.
-%\item all of the subject's reaction times change when the image is littered.
-%\end{enumerate}
-%
-%\disc{What would you do to test which subjects' reaction times change when the image is littered?}
-%
-%\end{frame}
+
+% \clicker{What is the best interpretation of the result?}
+% There is evidence that
+% \begin{enumerate}[(a)]
+% \item \solnMult{some of the subject's reaction times change when the image is littered.}
+% \item many subjects reaction times change when the image is littered, since the $F$-value is large.
+% \item all of the subject's reaction times change when the image is littered.
+% \end{enumerate}
+
+% \disc{What would you do to test which subjects' reaction times change when the image is littered?}
+
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
