@@ -108,7 +108,7 @@ rxntime\$Subject & 11 & 4060822.10 & 369165.65 & 20.05 & 0.0000 \\
 
 \item We want to determine which means are different from each other. What significance level should we use for these tests and why?
 
-\item Sample statistics for Subject 6 and Subject 8 are shown below. Use these to evaluate whether the mean reaction time for these two subjects is different. \textit{Hint:} You're doing a post-hoc pairwise test, how are $SE$ and $df$ defined?
+\item Sample statistics for Subject 6 and Subject 8 are shown below. Use these to evaluate whether the mean reaction times for these two subjects are different. \textit{Hint:} You're doing a post-hoc pairwise test, how are $SE$ and $df$ defined?
 
 \begin{center}
 \begin{tabular}{lll}
@@ -122,10 +122,15 @@ rxntime\$Subject & 11 & 4060822.10 & 369165.65 & 20.05 & 0.0000 \\
 \end{tabular}
 \end{center}
 
-\item BONUS [time permitting]: Load the dataset and conduct the ANOVA using the \texttt{inference} function. Note that the first variable is the response, and the second variable is the explanatory variable. For the rest of the necessary arguments the function should give you errors that lead you in the right direction. Copy and paste your code + output, and confirm the p-value for your pairwise t-test from the previous question.
+\item (time permitting) Load the dataset and conduct the ANOVA using the \texttt{inference} function. Note that the first variable is the response, and the second variable is the explanatory variable. For the rest of the necessary arguments the function should give you errors that lead you in the right direction. Copy and paste your code + output, and confirm the p-value for your pairwise t-test from the previous question.
+
+% \begin{verbatim}
+% download("http://stat.duke.edu/~mc301/data/rxntime.csv", destfile = "rxntime.csv")
+% rxntime = read.csv("rxntime.csv")
+% \end{verbatim}
 
 \begin{verbatim}
-download("http://stat.duke.edu/~mc301/data/rxntime.csv", destfile = "rxntime.csv")
+download("http://people.duke.edu/~jbw44/Spring2015/data/rxntime.csv", destfile="rxntime.csv")
 rxntime = read.csv("rxntime.csv")
 \end{verbatim}
 
