@@ -1,5 +1,5 @@
 ---
-title: "Lab 8"
+title: "Lab 9: Atheism and Inference for Categorical Data"
 author: "[Enter team name here]"
 date: "[Enter date here]"
 output:
@@ -16,7 +16,7 @@ output:
 
 **Load data:**
 ```{r}
-
+load(url("http://www.openintro.org/stat/data/atheism.RData"))
 ```
 
 * * *
