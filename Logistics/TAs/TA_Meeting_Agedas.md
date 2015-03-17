@@ -91,3 +91,35 @@ Sta 101 TA Meeting Agendas
 
 ### Week 7: February 23, 2015
 *
+
+
+### Week 8:
+
+### Week 9:
+
+Spring break
+
+### Week 10: March 16, 2015
+
+* Any comments from last week's lab?
+    + None
+
+* Any comments from grading problem sets or labs?
+    + People did not state and check conditions.
+
+* Tentative Final Grading duties
+    + Jesse: Philip, Fiamma, Mao, Tori
+	+ Mine : Chris, Radhika, Anthony, Christine
+	+ David can do either.
+
+* Tentative Exam 2 grading plans
+    + Jesse: Thursday at 6pm
+	+ Mine : Thursday
+
+* Next four in line for lab presentations:
+    + March 30: Fiamma
+    + April 06: David
+    + April 13: Anthony (not needed)
+    + April 20: Philip  (not needed)
+
+
