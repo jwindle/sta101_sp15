@@ -95,7 +95,8 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-%\input{../../definitions_custom.tex}
+\input{../../definitions_custom.tex}
+\setbeamercovered{transparent}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -104,6 +105,8 @@
 \title{Unit 5: Inference for categorical data}
 \subtitle{2. Comparing two proportions}
 \author{Sta 101 - Spring 2015}
+\date{March 18, 2015}
+% ALT ALT
 \date{March 19, 2015}
 \institute{Duke University, Department of Statistical Science}
 
@@ -137,13 +140,21 @@
 
 \begin{itemize}
 
-\item MT2 Review - Monday, March 23, 7-8pm
+% \item MT2 Review - Monday, March 23, 7-8pm
 
-\item OH next week - Monday and Tuesday 3-5pm
+% \item OH next week - Monday and Tuesday 3-5pm
 
-\item MT review materials to be posted on Sakai over the weekend
+% \item MT review materials to be posted on Sakai over the weekend
 
-\item RA5 opens on Sunday (but will also cover material from Monday's class so you might want to wait to take it) and will close at midnight on Monday
+% \item RA5 opens on Sunday (but will also cover material from Monday's class so you might want to wait to take it) and will close at midnight on Monday
+
+% ALT ALT
+
+\item Review materials will be posted over the weekend.
+
+\item PA 5 will open Monday morning (3/23 at 12:01am) and close Tuesday night (3/24 at 11:59pm).
+
+\item Project 1 due date will be pushed back to Monday morning 3/30.
 
 \end{itemize}
 
@@ -165,38 +176,72 @@
 
 \[ (\hat{p}_1 - \hat{p}_2) \sim N \pr{ mean = (p_1 - p_2), SE = \sqrt{ \frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2} } } \]
 
-Conditions:
+Conditions: 
 \begin{itemize}
 \item Independence: Random sample/assignment + 10\% rule
-\item Sample size / skew: At least 10 successes and failures
+\item Success-Failure: At least 10 expected successes and failures for each group
+\end{itemize}
+
+% ALT ALT
+
+\pause
+
+\hfill \\
+
+When we do not know or assume anything about $p_1$ and $p_2$:
+\begin{itemize}
+\item Success-Failure: At least 10 observed successes and failures for each group
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{For HT where $H_0: p_1 = p_2$, pool!}
+\subsection{For theoretical HT where $H_0: p_1 = p_2$, pool!}
 \label{mi2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{For HT where $H_0: p_1 = p_2$, pool!}
+\frametitle{For theoretical HT where $H_0: p_1 = p_2$, pool!}
 
-As with working with a single proportion,
+% As with working with a single proportion,
+
+% \begin{itemize}
+
+% \item When doing a HT where $H_0: p_1 = p_2$ (almost always for HT), use expected counts / proportions for S-F condition and calculation of the standard error.
+
+% \item Otherwise use observed counts / proportions for S-F condition and calculation of the standard error.
+
+% \end{itemize}
+
+% Expected proportion of success for both groups when $H_0: p_1 = p_2$ is defined as the \hl{pooled proportion}:
+% \[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
+
+% ALT ALT
+
+For independent groups hypothesis test with $H_0: p_1 = p_2$
 
 \begin{itemize}
 
-\item When doing a HT where $H_0: p_1 = p_2$ (almost always for HT), use expected counts / proportions for S-F condition and calculation of the standard error.
+\item Sampling distribtion
+\[
+\hat p_1 - \hat p_2 \sim N \pr{ mean = 0, SE = \sqrt{ \frac{p(1-p)}{n_1} + \frac{p(1-p)}{n_2} } }
+\]
 
-\item Otherwise use observed counts / proportions for S-F condition and calculation of the standard error.
+\pause
+
+\item Best guess of $p$:
+\[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
+
+\item Best guess of SE:
+\[
+SE_{pool} = \sqrt{ \frac{\hat p_{pool}(1-\hat p_{pool})}{n_1} + \frac{\hat p_{pool}(1-\hat p_{pool})}{n_2} } 
+\]
+
+\item Success-Failure: At least 10 ``expected'' successes and failures for each group (since we do not know $p$, use $\hat p_{pool}$).
 
 \end{itemize}
-
-\pause 
-
-Expected proportion of success for both groups when $H_0: p_1 = p_2$ is defined as the \hl{pooled proportion}:
-\[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
 
 \end{frame}
 
@@ -270,6 +315,15 @@ Expected proportion of success for both groups when $H_0: p_1 = p_2$ is defined 
 \vfill
 
 \ct{http://healthland.time.com/2013/08/09/malaria-vaccine-shows-strongest-protection-yet-against-parasite/}
+
+%---Note---%
+\note{
+  
+- Got to this slide at 1:51.
+
+- This quote is literally copied from time magazine.
+
+}
 
 \end{frame}
 
@@ -469,6 +523,16 @@ p-value =  0.0152
 \app{App Ex 5.2}{See course website for details.}
 
 \vfill
+
+%---Note---%
+\note{
+
+Sticky points: 
+
+- Where is table?  Where is number of each group?
+- Rounding numbers?
+
+}
 
 \end{frame}
 
