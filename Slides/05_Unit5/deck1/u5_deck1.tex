@@ -221,7 +221,7 @@ Conditions:
 
 \hfill \\
 
-When we do not know $p$:
+When we do not know or assume to know $p$:
 \begin{itemize}
 \item 10 observed successes and 10 observed failures.
 \end{itemize}
@@ -409,7 +409,7 @@ When do you use phat vs p?
 
 \begin{frame}
 
-\clicker{Are you left handed?}
+\clicker{Are you a vegetarian?}
 
 \begin{enumerate}[(a)]
 \item Yes
@@ -429,8 +429,23 @@ When do you use phat vs p?
 \item $H_0: p = 0.08$; $H_A: p < 0.08$
 \item $H_0: \hat{p} = 0.08$; $H_A: \hat{p} \ne 0.08$
 \item $H_0: \hat{p}_{Duke} = \hat{p}_{all~college}$; $H_A: \hat{p}_{Duke} \ne \hat{p}_{all~college}$
-\item $H_0: p_{Duke} = p_{all~college}$; $H_A: p_{Duke} \ne p_{all~college}$
+% \item $H_0: p_{Duke} = p_{all~college}$; $H_A: p_{Duke} \ne p_{all~college}$
 \end{enumerate}
+
+%---Note---%
+\note{
+
+People will mess up test.  Have them talk and then try again.
+
+Are we doing a one sample or a two sample test.  Have a bit of a discussion.
+
+Then revote one last time---very quickly.
+
+Start doing HT: why might theoretical situation be bad?
+
+What is the alternative option?
+
+}
 
 \end{frame}
 
@@ -477,6 +492,15 @@ inference(class_veg, success = "veg", est = "proportion",
           type = "ht", null = 0.08, alternative = "twosided", 
           method = "simulation")
 \end{verbatim}
+}
+
+%---Note---%
+\note{
+
+Have this code loaded into R.
+
+Look at data set.
+
 }
 
 \end{frame}
