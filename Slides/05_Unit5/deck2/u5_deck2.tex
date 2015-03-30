@@ -71,7 +71,7 @@
 % Option 4: Notes Only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% % See http://tex.stackexchange.com/questions/11421/add-notes-to-latex-beamer
 % \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
 
 % % handout layout
@@ -95,8 +95,8 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-\input{../../definitions_custom.tex}
-\setbeamercovered{transparent}
+% \input{../../definitions_custom.tex}
+% \setbeamercovered{transparent}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -107,7 +107,7 @@
 \author{Sta 101 - Spring 2015}
 \date{March 18, 2015}
 % ALT ALT
-\date{March 19, 2015}
+% \date{March 19, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 %%%%%%%%%%%
@@ -140,21 +140,23 @@
 
 \begin{itemize}
 
-% \item MT2 Review - Monday, March 23, 7-8pm
+\item MT2 Review - Monday, March 23, 7-8pm
 
-% \item OH next week - Monday and Tuesday 3-5pm
+\item OH next week - Monday and Tuesday 3-5pm
 
-% \item MT review materials to be posted on Sakai over the weekend
+\item MT review materials to be posted on Sakai over the weekend
 
-% \item RA5 opens on Sunday (but will also cover material from Monday's class so you might want to wait to take it) and will close at midnight on Monday
+\item RA5 opens on Sunday (but will also cover material from Monday's class so you might want to wait to take it) and will close at midnight on Monday
 
-% ALT ALT
+% ALT ALT - ADDED BELOW, COMMENTED OUT ABOVE
 
-\item Review materials will be posted over the weekend.
+% \item Review materials will be posted over the weekend.
 
-\item PA 5 will open Monday morning (3/23 at 12:01am) and close Tuesday night (3/24 at 11:59pm).
+% \item PA 5 will open Monday morning (3/23 at 12:01am) and close Tuesday night (3/24 at 11:59pm).
 
-\item Project 1 due date will be pushed back to Monday morning 3/30.
+% \item Project 1 due date will be pushed back to Monday morning 3/30.
+
+% \item Mao's office hours moved to tomorrow 7-9pm, Tori is there tonight 7-9pm.
 
 \end{itemize}
 
@@ -182,16 +184,16 @@ Conditions:
 \item Success-Failure: At least 10 expected successes and failures for each group
 \end{itemize}
 
-% ALT ALT
+% ALT ALT - ADDED BELOW
 
-\pause
+% \pause
 
-\hfill \\
+% \hfill \\
 
-When we do not know or assume anything about $p_1$ and $p_2$:
-\begin{itemize}
-\item Success-Failure: At least 10 observed successes and failures for each group
-\end{itemize}
+% When we do not know or assume anything about $p_1$ and $p_2$:
+% \begin{itemize}
+% \item Success-Failure: At least 10 observed successes and failures for each group
+% \end{itemize}
 
 \end{frame}
 
@@ -205,43 +207,43 @@ When we do not know or assume anything about $p_1$ and $p_2$:
 \begin{frame}
 \frametitle{For theoretical HT where $H_0: p_1 = p_2$, pool!}
 
-% As with working with a single proportion,
-
-% \begin{itemize}
-
-% \item When doing a HT where $H_0: p_1 = p_2$ (almost always for HT), use expected counts / proportions for S-F condition and calculation of the standard error.
-
-% \item Otherwise use observed counts / proportions for S-F condition and calculation of the standard error.
-
-% \end{itemize}
-
-% Expected proportion of success for both groups when $H_0: p_1 = p_2$ is defined as the \hl{pooled proportion}:
-% \[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
-
-% ALT ALT
-
-For independent groups hypothesis test with $H_0: p_1 = p_2$
+As with working with a single proportion,
 
 \begin{itemize}
 
-\item Sampling distribtion
-\[
-\hat p_1 - \hat p_2 \sim N \pr{ mean = 0, SE = \sqrt{ \frac{p(1-p)}{n_1} + \frac{p(1-p)}{n_2} } }
-\]
+\item When doing a HT where $H_0: p_1 = p_2$ (almost always for HT), use expected counts / proportions for S-F condition and calculation of the standard error.
 
-\pause
-
-\item Best guess of $p$:
-\[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
-
-\item Best guess of SE:
-\[
-SE_{pool} = \sqrt{ \frac{\hat p_{pool}(1-\hat p_{pool})}{n_1} + \frac{\hat p_{pool}(1-\hat p_{pool})}{n_2} } 
-\]
-
-\item Success-Failure: At least 10 ``expected'' successes and failures for each group (since we do not know $p$, use $\hat p_{pool}$).
+\item Otherwise use observed counts / proportions for S-F condition and calculation of the standard error.
 
 \end{itemize}
+
+Expected proportion of success for both groups when $H_0: p_1 = p_2$ is defined as the \hl{pooled proportion}:
+\[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
+
+% ALT ALT - ADDED BELOW, COMMENTED OUT ABOVE
+
+% For independent groups hypothesis test with $H_0: p_1 = p_2$
+
+% \begin{itemize}
+
+% \item Sampling distribtion
+% \[
+% \hat p_1 - \hat p_2 \sim N \pr{ mean = 0, SE = \sqrt{ \frac{p(1-p)}{n_1} + \frac{p(1-p)}{n_2} } }
+% \]
+
+% \pause
+
+% \item Best guess of $p$:
+% \[ \hat{p}_{pool} = \frac{total~successes}{total~sample~size} = \frac{suc_1 + suc_2}{n_1 + n_2} \]
+
+% \item Best guess of SE:
+% \[
+% SE_{pool} = \sqrt{ \frac{\hat p_{pool}(1-\hat p_{pool})}{n_1} + \frac{\hat p_{pool}(1-\hat p_{pool})}{n_2} } 
+% \]
+
+% \item Success-Failure: At least 10 ``expected'' successes and failures for each group (since we do not know $p$, use $\hat p_{pool}$).
+
+% \end{itemize}
 
 \end{frame}
 
@@ -512,7 +514,7 @@ p-value =  0.0152
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Single population proportion, small sample}
+\subsection{Comparing two proportions, large sample}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
