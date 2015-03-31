@@ -12,19 +12,19 @@
 % Option 1: Slides: (comment for handouts)   %
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+% \documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
 
-% solution stuff
-\newcommand{\solnMult}[1]{
-\only<1>{#1}
-\only<2->{\red{\textbf{#1}}}
-}
-\newcommand{\soln}[1]{\textit{#1}}
+% % solution stuff
+% \newcommand{\solnMult}[1]{
+% \only<1>{#1}
+% \only<2->{\red{\textbf{#1}}}
+% }
+% \newcommand{\soln}[1]{\textit{#1}}
 
-\newcommand{\solnMultOn}[3]{
-\only<#1>{#3}
-\only<{#2}->{\red{\textbf{#3}}}
-}
+% \newcommand{\solnMultOn}[3]{
+% \only<#1>{#3}
+% \only<{#2}->{\red{\textbf{#3}}}
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 2: Handouts, without solutions (post before class)    %
@@ -51,21 +51,21 @@
 % Option 3: Handouts, with solutions (may post after class if need be)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
 
-% % handout layout
-% \usepackage{pgfpages}
-% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+% handout layout
+\usepackage{pgfpages}
+\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
 
-% % solution stuff
-% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
-% \newcommand{\soln}[1]{\textit{#1}}
+% solution stuff
+\newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+\newcommand{\soln}[1]{\textit{#1}}
 
-% % % This breaks things for me for some reason.
-% % % tell pgfpages how to set page sizes in XeLaTeX
-% % \renewcommand\pgfsetupphysicalpagesizes{%
-% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-% % }
+% % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% \renewcommand\pgfsetupphysicalpagesizes{%
+%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 4: Notes Only
@@ -95,7 +95,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-%\input{../../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -105,6 +105,8 @@
 \subtitle{3. Chi-square testing}
 \author{Sta 101 - Spring 2015}
 \date{March 23, 2015}
+% ALT ALT
+% \date{March 24, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 %%%%%%%%%%%
@@ -144,6 +146,14 @@
 \item Project due Saturday night
 
 \item RA6 Monday (all videos, unit is shorter)
+
+% ALT ALT
+
+% \item Tomorrow in lab: work on Project 1---attendence is still mandatory.
+
+% \item Project 1 due Monday at noon.
+
+% \item RA6 Monday (all videos, unit is shorter)
 
 \end{itemize}
 
@@ -214,9 +224,46 @@ $\:$ \\
 \pause
 $\:$ \\
 
-\soln{\only<2|handout:0>{\red{ $H_0:$ Each outcome is equally likely, $p_1 = p_2 = \cdots = p_{50} = 1/59$ }}}
+\soln{\only<2|handout:0>{\red{ $H_0:$ Each outcome is equally likely, $p_1 = p_2 = \cdots = p_{59} = 1/59$ }}}
+
+%---Note---%
+\note{
+
+People will be split between goodness of fit and $\chi^2$ test for dependence, so have them discuss and vote again.
+
+}
 
 \end{frame}
+
+% ALT ALT - COMMENTED ABOVE ADDED BELOW 
+
+% \begin{frame}
+
+% % Another scenario to consider:
+% % https://www.ucsf.edu/news/2014/10/119591/genetic-variant-protects-some-latina-women-breast-cancer
+
+%   \clicker{You and a friend are playing craps, which relies on two dice.  Your friend brought the dice.  You have recorded the previously rolled totals as data.  Which test is most appropriate to check that the dice are fair?}
+
+% \begin{enumerate}[(a)]
+% \item Z test for a single proportion
+% \item Z test for comparing two proportions
+% \item \solnMult{$\chi^2$ test of goodness of fit}
+% \item $\chi^2$ test of independence
+% \end{enumerate}
+
+% \pause
+% $\:$ \\
+
+% \soln{\only<2|handout:1>{\red{ $H_0:$ $p_2 = p_{12} = 1/36$; $p_{3} = p_{11} = 1/18$; $p_{4} = p_{10} = 1/12$; $p_{5} = p_{9} = 1/9$; $p_{6} = p_{8} = 5/36$; $p_{7} = 1/6$.}}}
+
+% %---Note---%
+% \note{
+
+% People will be split between goodness of fit and $\chi^2$ test for dependence, so have them discuss and vote again.
+
+% }
+
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -234,7 +281,18 @@ $\:$ \\
 \pause
 $\:$ \\
 
-\soln{\only<2|handout:0>{\red{ $H_0: p_{TPR} = p_{Other}$, where $p =$ probability of being motivated to vote }}}
+\soln{\only<2|handout:1>{\red{ $H_0: p_{TPR} = p_{Other}$, where $p =$ probability of being motivated to vote }}}
+
+%---Note---%
+\note{
+
+It will be split between t-test for comparing two proportions and $\chi^2$ test of independence.  Mine has them vote again.
+
+Write down table.
+
+Explanation of why two prop vs. chisq: because two prop. is more conservative?
+
+}
 
 \end{frame}
 
@@ -259,7 +317,7 @@ We want to find out whether party affiliation is associated with motivation to v
 \pause
 $\:$ \\
 
-\soln{\only<2|handout:0>{\red{ $H_0:$ Party affiliation and motivation to vote are independent }}}
+\soln{\only<2|handout:1>{\red{ $H_0:$ Party affiliation and motivation to vote are independent }}}
 
 \end{frame}
 
@@ -278,11 +336,63 @@ $\:$ \\
 
 \textbf{Important points:}
 \begin{itemize}
-\item Use \textbf{counts} (not \textbf{proportions}) in the calculation of the text statistic, even though we're truly interested in the proportions for inference
+\item Use \textbf{counts} (not \textbf{proportions}) in the calculation of the test statistic, even though we're truly interested in the proportions for inference
 \item Expected counts are calculated assuming the null hypothesis is true
 \end{itemize}
 
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Expected Counts}
+
+Example: does survival on the Titanic depend on cabin class?
+
+\hfill \\
+
+% See HypothesisTesting09.tex from Fall 2014
+\begin{minipage}{0.5\textwidth}
+Observed counts:
+\begin{center}
+\begin{tabular}{l c c c}
+    & 1st & 2nd & 3rd \\
+no  & 123 & 158 & 528 \\
+yes & 200 & 119 & 181
+\end{tabular}
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+Column props.:
+\begin{center}
+\begin{tabular}{l c c c}
+    & 1st & 2nd & 3rd \\
+  no  & 0.38 &  0.57 & 0.74 \\
+  yes & 0.62 & 0.43 & 0.26
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\pause
+
+\hfill \\
+
+Intuition:
+\[
+E_{\text{no, 1st}} = \hat p_{no} \times \hat p_{1st} \times \text{(total \# obs)}
+\]
+
+Simplification:
+\[
+E_{\text{no, 1st}} = \frac{\text{row ``no'' total} \times \text{col ``1st'' total}}{\text{table total}} = \frac{809 \times 323}{1309} = 199.6
+\]
+
+\pause
+
+$\chi^2_{titanic} = 127.9$
+
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -351,6 +461,41 @@ df \hfill 1 &  1.07 &  1.64 &  2.71 &  3.84 &  5.41 &  6.63 &  7.88 &  10.83 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}
+\frametitle{Computing a $p$-value using the table}
+
+\clicker{In the Titanic example, $\chi^2_{titanic} = 127.9$ and $df=2$.  Based on the table from the previous slide, which of the following is correct?  (Hint: draw a picture!)}
+
+  \begin{enumerate}[(a)]
+  %\item The $p$-value for this data set will be in the interval $(0.2, 0.3]$.
+  %\item The $p$-value for this data set will be in the interval $(0.1, 0.2]$.
+   %\item The $p$-value for this data set will be in the interval $(0.05, 0.1]$.
+  \item The $p$-value for this data set will be in the interval $(0.02, 0.05]$.
+  \item The $p$-value for this data set will be in the interval $(0.01, 0.02]$.
+  \item The $p$-value for this data set will be in the interval $(0.005, 0.01]$.
+  \item The $p$-value for this data set will be in the interval $(0.001, 0.005]$.
+  \item \solnMult{The $p$-value for this data set will be at or below $0.001$.}
+  \end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Interpretation}
+
+\clicker{What is the best interpretation of the hypothesis test?}
+
+  \begin{enumerate}[(a)]
+    \item There is not convincing evidence that survival and cabin class are dependent.
+    \item \solnMult{There is convincing evidence that survival and cabin class are dependent.}
+  \end{enumerate}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{At least 5 expected successes for $\chi^2$ testing}
 \label{mi3}
 
@@ -388,7 +533,18 @@ What test is most appropriate for evaluating the relationship between these two 
 \item \solnMult{none of the above}
 \end{enumerate}
 
+%---Note---%
+\note{
+
+They will mess this up once.  Have them vote again.
+
+You must have disjoint categories.
+
+}
+
 \end{frame}
+
+% ALT ALT - COMMENTED ABOVE
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -404,7 +560,138 @@ What test is most appropriate for evaluating the relationship between these two 
 
 \vfill
 
+%---Note---%
+\note{
+
+25 minutes for app ex.
+
+If you aren't done in first 10 minutes with part 1, raise your hand.
+
+}
+
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ALT ALT - ADDED SECTION ON RANDOMIZATION TEST
+
+% \section{Randomization Test}
+
+% \begin{frame}
+% \frametitle{Recap: Does smoking habit depend on exercise habit?}
+
+% Does smoking habit depend on exercise habit?
+% \begin{center}
+% \begin{tabular}{c c c c}
+%           &  Freq.Exer & Not.Freq.Exer & Total \\
+%   Non.Smoker &      87  &         102 & 189 \\
+%   Smoker     &      28    &       19  & 47  \\
+%   Total      &      115  & 121 & 236
+% \end{tabular}
+% \end{center}
+
+% \begin{itemize}
+% \item $H_0$: $p_{\text{freq. exer}} = p_{\text{not freq. exer}}$
+% \item $H_A$: $p_{\text{freq. exer}} \neq p_{\text{not freq. exer}}$
+% \end{itemize}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+% \frametitle{Randomization test for the difference of two proportions}
+
+% \begin{enumerate}
+
+% \item Use 236 index cards, where each card represents an observation.
+
+% \pause
+
+% \item Mark 189 of the cards as ``Non Smoker'' and the remaining 47 as ``Smoker.''
+
+% \pause
+
+% \item Shuffle the cards and split into two groups of size of size 115 and 121 corresponding to ``Freq.\ Exer'' and ``Not Freq. Exer'' respectively.
+
+% \pause
+
+% \item Calculate the difference between the proportions of ``Non Smoking" in the frequent exercise and not frequent exercise groups, and record this number.
+
+% \pause
+
+% \item Repeat steps (3) and (4) many times to build a randomization distribution of differences in simulated proportions.
+
+% \end{enumerate}
+
+% \end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+% \frametitle{Recap: Does smoking habit depend on exercise habit?}
+
+% Does smoking habit depend on exercise habit?
+% \begin{center}
+% \begin{tabular}{c c c c c}
+%        & Freq &None & Some & Total \\
+%   Heavy&   7  & 1   &3  & 11 \\
+%   Never&  87  & 18  &84 & 189 \\
+%   Occas&  12  & 3   &4  & 19 \\
+%   Regul&   9  & 1   &7  & 17 \\
+%   Total& 115  & 23  &98 &236
+% \end{tabular}
+% \end{center}
+
+% \begin{itemize}
+% \item $H_0$: smoking habits are not dependent on exercise habits.
+% \item $H_A$: smoking habits are depenednet on exercise habits.
+% \end{itemize}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+% \frametitle{Randomization test for the dependence of two categorical variables}
+
+% \begin{enumerate}
+
+% \item Use 236 index cards, where each card represents an observation.
+
+% \pause
+
+% \item Mark 11 of the cards ``Heavy'', 189 of the cards ``Never'', 19 of the cards ``Occas'', 17 of the cards ``Regul''.
+
+% \pause
+
+% \item Shuffle the cards and split into 3 groups of size of size 115, 23, and 98 corresponding to ``Freq'', ``None'', and ``Some'' respectively.
+
+% \pause
+
+% \item Calculate the the $\chi^2$ test statistic for the shuffled data.
+
+% \pause
+
+% \item Repeat steps (3) and (4) many times to build a randomization distribution of many $\chi^2$ test statistics.
+
+% \end{enumerate}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+% \frametitle{Randomization test for the dependence of two categorical variables}
+
+% \vfill
+
+% Check out \webLink{https://stat.duke.edu/~jbw44/Teaching/Spring2015/post/misc/chisq-randomization.R.txt}{chisq-randomization.R} on the course website.
+
+% \vfill
+
+% \end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
