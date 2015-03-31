@@ -90,8 +90,6 @@ Sta 101 TA Meeting Agendas
     + add set seed to lab 6
 
 ### Week 7: February 23, 2015
-*
-
 
 ### Week 8:
 
@@ -122,4 +120,10 @@ Spring break
     + April 13: Anthony (not needed)
     + April 20: Philip  (not needed)
 
+
+### Week 12: March 30, 2015
+* PS late penalty - 30% off from total, not from score
+* Lab grading of students not present
+* Grading schedule and keeping on task
+* Project 1 grading
 
