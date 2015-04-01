@@ -95,7 +95,8 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-%\input{../../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
+% \setbeamercovered{transparent}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -137,15 +138,21 @@
 
 \begin{itemize}
 
-\item MT2 Extra credit -- Due Monday next week, 1 write up per team + all exams for the team
+% \item MT2 Extra credit -- Due Monday next week, 1 write up per team + all exams for the team
 
-\item Any grade change requests due within 3 days (by Thursday 5pm)
+% \item Any grade change requests due within 3 days (by Thursday 5pm)
 
-\item Watch your email about correction on a MC question (Version A \#16, Version B \#23)
+% \item Watch your email about correction on a MC question (Version A \#16, Version B \#23)
 
-\item PS9 due Wednesday
+% \item PS9 due Wednesday
 
-\item PE for Project 1 due Wednesday
+% \item PE for Project 1 due Wednesday
+
+\item Exam 2 will be returned in lab.
+
+\item Grade change requests due by Sat. 11:59pm.
+
+\item PS9 due Thursday.
 
 \end{itemize}
 
@@ -261,6 +268,8 @@
 
 Post a screenshot with your problem set HW for +1 pt extra credit!
 
+% ALT ALT
+
 \webURL{http://mih5.github.io/correlation_game2/correlationgame.html}
 
 \vfill
@@ -284,7 +293,7 @@ Remember: correlation does not always imply causation!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Least squares line minimizes squared residuals}
+\subsection{Least squares line minimizes sum of squared residuals}
 \label{mi2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -294,13 +303,17 @@ Remember: correlation does not always imply causation!
 
 \begin{itemize}
 
-\item Residuals are the leftovers from the model fit, and calculated as the difference between the observed and predicted $y$: $e_i = y_i - \hat{y}_i$
+\item Residuals are the leftovers from the model fit, and calculated as the difference between the observed and fitted $y$: $e_i = y_i - \hat{y}_i$
 
-\item The least squares line minimizes squared residuals:
+\item The least squares line minimizes the sum of squared residuals:
 \begin{itemize}
 \item Population data: $\hat{y} = \beta_0 + \beta_1 x$
 \item Sample data: $\hat{y} = b_0 + b_1 x$
 \end{itemize}
+% ALT ALT
+% \[
+% \sum_{i=1}^n (y_i - (\tilde b_0 + \tilde b_1 x_i))^2
+% \]
 
 \end{itemize}
 
@@ -312,7 +325,7 @@ Remember: correlation does not always imply causation!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Interpreting the last squares line}
+\subsection{Interpreting the least squares line}
 \label{mi3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,7 +335,7 @@ Remember: correlation does not always imply causation!
 
 \begin{itemize}
 
-\item \hl{Slope:} For each \underline{unit} increase in \underline{$x$}, \underline{$y$} is expected to be\underline{higher/lower} on average by \underline{the slope}.
+\item \hl{Slope:} For each \underline{unit} increase in \underline{$x$}, \underline{$y$} is expected to be \underline{higher/lower} on average by \underline{the slope}.
 \[ b_1 = \frac{s_y}{s_x} R \]
 
 \item \hl{Intercept:} When \underline{$x = 0$}, \underline{$y$} is expected to equal \underline{the intercept}.
@@ -332,6 +345,21 @@ Remember: correlation does not always imply causation!
 \end{itemize}
 
 \end{itemize}
+
+% ALT ALT - COMMENTED OUT ABOVE, ADDED BELOW
+
+% \begin{itemize}
+
+% \item \hl{Slope:} For each \underline{unit} increase in \underline{$x$}, \underline{$y$} is expected to be \underline{higher/lower} on average by \underline{the slope}.
+% \[ b_1 = \frac{s_y}{s_x} R \]
+
+% \item \hl{Intercept:} When \underline{$x = 0$}, \underline{$y$} is expected on average to be \underline{the intercept}.
+% \[ b_0 = \bar{y} - b_1 \bar{x} \]
+% \begin{itemize}
+% \item The calculation of the intercept uses the fact the a regression line \textbf{always} passes through $(\bar{x},\bar{y})$.
+% \end{itemize}
+
+% \end{itemize}
 
 \end{frame}
 
@@ -350,6 +378,10 @@ Remember: correlation does not always imply causation!
 \item If there is no relationship between $x$ and $y$ ($b_1 = 0$), the best guess for $\hat{y}$ for any value of $x$ is $\bar{y}$.
 
 \item Even when there is a relationship between $x$ and $y$ ($b_1 \ne 0$), the best guess for $\hat{y}$ when $x = \bar{x}$ is still $\bar{y}$.
+
+% ALT ALT - COMMENTED ABOVE AND ADDED BELOW
+
+% \item The ``center'' of the cloud of points is always at $(\bar x, \bar y)$.
 
 \end{itemize}
 
